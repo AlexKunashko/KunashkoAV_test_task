@@ -1,0 +1,274 @@
+header {
+  margin-top: 0.625rem;
+  /* position: fixed; */
+  /* top: 0.625rem; */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  .logo {
+    grid-area: my-logo;
+  }
+  .menu {
+    grid-area: my-nav;
+  }
+  .buttons {
+    grid-area: my-buttons;
+  }
+  .header {
+    width: 102.5rem;
+    padding: 1.25rem 2.75rem;
+    display: grid;
+    grid-template-areas: "my-logo my-nav my-buttons";
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 4rem;
+    border: 4px solid #478bf9;
+    background: #110a1d;
+    @include breakpoint($bp-xxl) {
+      grid-template-areas:
+        "my-logo my-nav my-nav"
+        "my-logo my-buttons my-buttons";
+      gap: 10px;
+    }
+    @include breakpoint($bp-lg) {
+      display: none;
+    }
+    .logo {
+      width: 17.9375rem;
+      height: 2rem;
+    }
+    .menu ul {
+      display: flex;
+      padding: 0.5rem;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      @include breakpoint($bp-xxl) {
+        justify-content: end;
+      }
+      li a {
+        color: var(--main-clean-white-ffffff, #fff);
+        font-family: Lexend;
+        font-size: 1rem;
+        font-style: normal;
+        font-weight: 400;
+        transition: color 0.5s;
+        &:hover {
+          color: var(--main-blue-478-bf-9, #478bf9);
+        }
+      }
+    }
+    .buttons {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 0.875rem;
+      img {
+        width: 1rem;
+        height: 1rem;
+      }
+      .btn {
+        position: relative;
+        z-index: 4;
+        display: flex;
+        padding: 0.75rem;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+        border-radius: 1.5rem;
+        border: 2px solid var(--additional-purple-9-dadf-2, #9dadf2);
+        background: var(--main-navy-blue-110-a-1-d, #110a1d);
+        color: var(--main-clean-white-ffffff, #fff);
+        text-align: center;
+        font-family: Lexend;
+        font-size: 1rem;
+        font-style: normal;
+        font-weight: 400;
+        transition: background 0.5s;
+        transition: border 0.5s;
+        &:hover {
+          border: 2px solid var(--main-blue-478-bf-9, #478bf9);
+          background: var(--main-blue-478-bf-9, #478bf9);
+        }
+      }
+    }
+  }
+}
+.mobile-header {
+  display: none;
+  @include breakpoint($bp-lg) {
+    display: flex;
+    width: 100%;
+    padding: 0.625rem 0.875rem;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 4rem;
+    border: 2px solid var(--main-blue-478-bf-9, #478bf9);
+    background: var(--main-navy-blue-110-a-1-d, #110a1d);
+  }
+  &__logo {
+    max-width: 70%;
+    width: 17.9375rem;
+    height: 2rem;
+  }
+  &__buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+  }
+}
+.mobile-menu {
+  padding-top: 0.625rem;
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  background: var(--main-navy-blue-110-a-1-d, #110a1d);
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 1.875rem;
+  &__logo {
+    max-width: 70%;
+    width: 17.9375rem;
+    height: 2rem;
+  }
+  &__buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .menu {
+    width: 100%;
+    ul {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.3125rem;
+      li {
+        width: 100%;
+        border-radius: 1.75rem;
+        border: 2px solid var(--main-blue-478-bf-9, #478bf9);
+        background: var(--main-navy-blue-110-a-1-d, #110a1d);
+        display: flex;
+        padding: 0.8125rem 1.25rem;
+        align-items: center;
+        gap: 0.5rem;
+        a {
+          color: var(--main-clean-white-ffffff, #fff);
+
+          /* Buttons/Btn. Input */
+          font-family: Lexend;
+          font-size: 1.125rem;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 1.5rem; /* 133.333% */
+        }
+      }
+    }
+  }
+  .buttons {
+    width: 100%;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 0.25rem;
+    .btn {
+      display: flex;
+      width: 100%;
+      padding: 0.8125rem 1.25rem;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+      border-radius: 1.5rem;
+      border: 2px solid var(--additional-purple-9-dadf-2, #9dadf2);
+      background: var(--main-deep-blue-1-e-1231, #1e1231);
+      &:hover {
+        border: 2px solid var(--main-blue-478-bf-9, #478bf9);
+        background: var(--main-blue-478-bf-9, #478bf9);
+      }
+    }
+  }
+}
+.active-header {
+  display: flex;
+}
+.language {
+  position: relative;
+  button {
+    width: 4.6875rem;
+  }
+}
+.selection-language {
+  z-index: 3;
+  position: absolute;
+  top: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4.6575em;
+  display: none;
+  padding: 0.75rem;
+  padding-top: 2rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 0 0 1.5rem 1.5rem;
+  border: 2px solid var(--additional-purple-9-dadf-2, #9dadf2);
+  border-top: none;
+  background: var(--main-navy-blue-110-a-1-d, #110a1d);
+  color: var(--main-clean-white-ffffff, #fff);
+  text-align: center;
+  font-family: Lexend;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  transition: background 0.5s;
+  transition: border 0.5s;
+  ul {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    li {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      button {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+  }
+}
+.mobile-menu .language button,
+.mobile-header .language button {
+  width: auto;
+}
+.mobile-menu,
+.mobile-header {
+  .selection-language {
+    width: 9rem;
+    top: -0.6875rem;
+    left: auto;
+    right: -2.875rem;
+    padding: 0.5rem;
+    border-radius: 1.5rem;
+    border: 2px solid var(--additional-purple-9-dadf-2, #9dadf2);
+    ul {
+      flex-direction: row;
+      justify-content: space-evenly;
+    }
+  }
+}
+.active-language {
+  display: flex;
+}

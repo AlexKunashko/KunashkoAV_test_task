@@ -1,0 +1,112 @@
+.footer {
+  display: flex;
+  width: 100%;
+  padding: 2.25rem 12.25rem 1.5rem 12.25rem;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  gap: 2rem;
+  border-radius: 4rem 4rem 0px 0px;
+  border-top: 4px solid var(--main-blue-478-bf-9, #478bf9);
+  border-right: 4px solid var(--main-blue-478-bf-9, #478bf9);
+  border-left: 4px solid var(--main-blue-478-bf-9, #478bf9);
+  background: var(--main-deep-blue-1-e-1231, #1e1231);
+  @include breakpoint($bp-xxl) {
+    padding: 2.25rem 2.25rem 1.5rem 2.25rem;
+  }
+  @include breakpoint($bp-lg) {
+    padding: 1.25rem;
+  }
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    align-self: stretch;
+    @include breakpoint($bp-lg) {
+      flex-direction: column;
+      align-items: start;
+      gap: 1.25rem;
+    }
+    .pages ul {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      @include breakpoint($bp-lg) {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.125rem;
+      }
+      a {
+        color: var(--main-clean-white-ffffff, #fff);
+        text-align: center;
+        font-family: Lexend;
+        font-size: 1rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1.25rem;
+        transition: color 0.5s;
+        @include breakpoint($bp-lg) {
+          font-size: 0.875rem;
+        }
+        &:hover {
+          color: var(--main-blue-478-bf-9, #478bf9);
+        }
+      }
+    }
+    .socials {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 0.875rem;
+      @include breakpoint($bp-lg) {
+        align-items: start;
+        gap: 0.5rem;
+      }
+      p {
+        align-self: stretch;
+        color: var(--main-clean-white-ffffff, #fff);
+        text-align: right;
+        font-family: Lexend;
+        font-size: 1rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1.25rem;
+        @include breakpoint($bp-lg) {
+          font-size: 0.875rem;
+        }
+      }
+      ul {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        li {
+          background: url("../assets/images/footer/bg-social.svg");
+          width: 2rem;
+          height: 2rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          transition: background 0.5s;
+          @include breakpoint($bp-lg) {
+            background: url("../assets/images/footer/bg-social-mobile.svg");
+            width: 1.6875rem;
+            height: 1.6875rem;
+          }
+          &:hover {
+            background: url("../assets/images/footer/bg-social-hover.svg");
+            transition: background 0.5s;
+          }
+          a {
+            width: 1rem;
+            height: 1rem;
+          }
+          img {
+            width: 1rem;
+            height: 1rem;
+          }
+        }
+      }
+    }
+  }
+}
